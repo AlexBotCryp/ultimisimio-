@@ -70,8 +70,7 @@ def intentar_comprar():
             return
         except Exception as e:
             mensaje = str(e)
-            enviar_telegram("⚠️ No se pudo comprar {}:
-{}".format(symbol, mensaje))
+            enviar_telegram("⚠️ No se pudo comprar {}:{}".format(symbol, mensaje))
             lista_negra[symbol] = datetime.utcnow().isoformat()
             guardar_lista_negra(lista_negra)
 
